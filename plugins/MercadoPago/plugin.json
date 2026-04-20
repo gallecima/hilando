@@ -1,0 +1,22 @@
+{
+  "slug": "mercadopago",
+  "name": "MercadoPago",
+  "version": "1.0.0",
+  "provider": "Plugins\\MercadoPago\\MercadoPagoServiceProvider",
+  "description": "Cobrá con MercadoPago en tu tienda y recibí confirmaciones de pago por webhook",
+  "has_admin": true,
+  "admin_route": "admin.plugins.mercadopago.edit",
+  "defaults": {
+    "mode": "test",
+    "public_key": "",
+    "access_token": "",
+    "integrator_id": "",
+    "webhook_secret": "",
+    "webhook_url": "",  
+    "success_url": "/checkout/complete?status=success",
+    "failure_url": "/checkout/complete?status=failure",
+    "pending_url": "/checkout/complete?status=pending",
+    "auto_capture": true,
+    "installments": 1
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "slug": "helloworld",
+  "name": "Hello World",
+  "description": "Muestra un div con un mensaje de texto en los hooks definidos en el template",
+  "version": "1.0.0",
+  "provider": "Plugins\\HelloWorld\\HelloWorldServiceProvider",
+  "has_admin": true,
+  "admin_route": "admin.plugins.helloworld.edit",
+  "defaults": {
+    "message": "¡Hola mundo desde el plugin!",
+    "contexts": ["home"],
+    "hook": "front:global:banner",
+    "style": "alert alert-info"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "pixelio/plugin-mercadopago",
+  "description": "Plugin MercadoPago para Pixelio Cart",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Plugins\\MercadoPago\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=8.2",
+    "mercadopago/dx-php": "^3.0" 
+  }
+}

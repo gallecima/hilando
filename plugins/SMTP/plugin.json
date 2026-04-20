@@ -1,0 +1,21 @@
+{
+  "slug": "smtp",
+  "name": "SMTP",
+  "version": "1.0.0",
+  "provider": "Plugins\\SMTP\\SMTPServiceProvider",
+  "description": "Configuración de un servidor SMTP externo para el envio de notificaciones y mensajes",
+  "has_admin": true,
+  "admin_route": "admin.plugins.smtp.edit",
+  "defaults": {
+    "host": "",
+    "port": 587,
+    "encryption": "tls",
+    "username": "",
+    "password": "",
+    "from_email": "",
+    "from_name": "",
+    "allow_self_signed": "true",
+    "skip_host_verify": "true",
+    "reply_to": ""
+  }
+}
