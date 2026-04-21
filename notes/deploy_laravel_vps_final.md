@@ -3,11 +3,6 @@
 Esta guía resume el proceso completo para desplegar un proyecto Laravel desde cero en un VPS productivo.
 
 
-
-
-ssh -p5676 root@138.219.42.49
-Clave: ilU7VO1L8pJ1
-
 ---
 
 # 🔐 0. Configuración de Nginx + SSL
