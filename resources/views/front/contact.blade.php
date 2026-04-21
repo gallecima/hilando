@@ -75,7 +75,7 @@
                   @enderror
                 </div>
 
-                <button type="submit" class="btn btn-secondary w-100">Enviar solicitud de contacto</button>
+                <button type="submit" class="btn btn-secondary rounded-pill w-100">Enviar solicitud de contacto</button>
               </form>
             </div>
           </div>

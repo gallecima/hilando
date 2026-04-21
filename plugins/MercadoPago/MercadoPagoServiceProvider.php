@@ -55,9 +55,9 @@ class MercadoPagoServiceProvider extends ServiceProvider
 
             $mpLogo = asset('images/mp-logo-horizontal.png');
             return <<<HTML
-        <div class="card mb-3 bg-light mt-4 mt-lg-0">
+        <div class="mb-3 mt-4 mt-lg-0 js-mp-payment-block">
 
-            <div class="bg-light rounded p-4 p-lg-4 d-lg-flex d-flex justify-content-between flex-column flex-lg-row text-center text-lg-start">
+            <div class="rounded p-4 p-lg-4 d-lg-flex d-flex justify-content-between flex-column flex-lg-row text-center text-lg-start">
                 <div style="width:50%">
                     <img src="{$mpLogo}" alt="" class="me-3" style="width:100%; max-width:200px">
                 </div>
@@ -68,7 +68,7 @@ class MercadoPagoServiceProvider extends ServiceProvider
                                             <form method="POST" action="{$action}" class="mt-4 js-mp-pay-form">
                                             <input type="hidden" name="_token" value="{$token}">
                                             <input type="hidden" name="amount" value="{$amount}">
-                                            <button class="btn btn-primary w-100 js-mp-pay-btn" data-loading-text="Redirigiendo a MercadoPago...">
+                                            <button class="btn btn-primary rounded-pill w-100 js-mp-pay-btn" data-loading-text="Redirigiendo a MercadoPago...">
                                                 <span class="spinner-border spinner-border-sm me-2 js-btn-spinner d-none" role="status" aria-hidden="true"></span>
                                                 <span class="js-btn-label">Pagar</span>
                                             </button>

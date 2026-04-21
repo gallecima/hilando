@@ -12,6 +12,7 @@
     --brand-muted: #f2f2f2;
     --brand-white: #ffffff;
     --brand-border: rgba(128, 128, 128, 0.35);
+    --bs-border-color: #000000;
   }
 
   body,
@@ -106,6 +107,18 @@
   body.page-hero header .dropdown-item,
   body.page-hero header .btn-link {
     color: rgba(255, 255, 255, 0.92);
+  }
+
+  body.page-hero header .dropdown-item {
+    background: transparent;
+  }
+
+  body.page-hero header .dropdown-item:hover,
+  body.page-hero header .dropdown-item:focus,
+  body.page-hero header .dropdown-item:active,
+  body.page-hero header .dropdown-item.active {
+    color: #fff !important;
+    background: rgba(255, 255, 255, 0.12);
   }
 
   body.page-hero header .header-action-icon {
@@ -282,7 +295,7 @@
   .contact-form-card {
     margin-top: clamp(2rem, 4vw, 3rem);
     padding: clamp(1.3rem, 2.5vw, 1.9rem);
-    background: rgba(248, 238, 221, 0.72);
+    background: rgba(128,128,128,.1);
     border-radius: 0.95rem;
   }
 
@@ -360,12 +373,12 @@
   main form .form-control:not(.product-showcase-quantity-input):not(.quantity-input),
   main form .form-select,
   main form .input-group-text {
-    min-height: 4rem;
+    min-height: 2rem;
     border-radius: 0.55rem;
     border: 0;
     background: rgba(255, 255, 255, 0.94);
     color: rgba(0, 0, 0, 0.72);
-    padding: 1rem 1.2rem;
+    padding: .5rem 1.2rem;
     box-shadow: none;
   }
 
@@ -1365,6 +1378,16 @@
     filter: brightness(0) invert(1);
   }
 
+  .favorites-offcanvas-remove {
+    align-self: flex-start;
+    width: 2rem;
+    height: 2rem;
+    min-width: 2rem;
+    padding: 0;
+    border-radius: 0.55rem;
+    flex: 0 0 auto;
+  }
+
   .catalog-product-card {
     background: transparent;
   }
@@ -1597,6 +1620,29 @@
 
   body.checkout-page .page-header-hero {
     margin-bottom: 0;
+  }
+
+  body.checkout-page .checkout-flow-section .card {
+    background: rgba(128, 128, 128, .1);
+  }
+
+  body.checkout-page .checkout-flow-section .card-header {
+    background: transparent;
+  }
+
+  body.checkout-page .checkout-flow-section .list-group {
+    background: transparent;
+    border: 0;
+  }
+
+  body.checkout-page .checkout-flow-section .list-group-item {
+    background: transparent;
+    border: 0;
+  }
+
+  body.checkout-page .checkout-flow-section .js-payment-method-item {
+    background: transparent !important;
+    background-color: transparent !important;
   }
 
   body.checkout-page .page-header-hero-inner {

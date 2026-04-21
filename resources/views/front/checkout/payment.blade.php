@@ -21,6 +21,9 @@
         <div class="row g-4">
           <div class="col-lg-6 order-2 order-lg-1">
             <div class="card shadow-sm front-form-card">
+              <div class="card-header" style="background-color: rgba(128, 128, 128, 1) !important; color: #FFF;">
+                <strong>Forma de pago</strong>
+              </div>                    
               <div class="card-body">
                 @if (($isFreeCheckout ?? false) === true)
                   <div class="alert alert-success">
@@ -72,7 +75,7 @@
 
                         <div class="row mt-4 g-2">
                           <div class="col-sm-6">
-                            <a href="{{ $paymentBackRoute }}" class="btn btn-outline-secondary w-100">Atrás</a>
+                            <a href="{{ $paymentBackRoute }}" class="btn btn-outline-secondary rounded-pill w-100">Atrás</a>
                           </div>
                           <div class="col-sm-6">
                             <button type="submit" class="btn btn-primary w-100">Continuar</button>
@@ -80,7 +83,7 @@
                         </div>
                       </form>
                     @else
-                      <a href="{{ $paymentBackRoute }}" class="btn btn-outline-secondary w-100">Atrás</a>
+                      <a href="{{ $paymentBackRoute }}" class="btn btn-outline-secondary rounded-pill w-100">Atrás</a>
                     @endif
                   @endif
                 @endif

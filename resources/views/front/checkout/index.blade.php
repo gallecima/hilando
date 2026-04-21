@@ -59,6 +59,9 @@
         <div class="row g-4">
         <div class="col-lg-6 order-2 order-lg-1">
           <div class="card shadow-sm front-form-card">
+          <div class="card-header" style="background-color: rgba(128, 128, 128, 1) !important; color: #FFF;">
+            <strong>Datos del cliente</strong>
+          </div>            
             <div class="card-body">
               @if(($isDigitalCheckout ?? true) === true)
                 @if (session('error'))
@@ -158,14 +161,14 @@
                   <div class="alert alert-danger py-2 px-3 small">{{ session('error') }}</div>
                 @endif
 
-                <div class="alert alert-info py-2 px-3 small">
+                {{-- <div class="alert alert-info py-2 px-3 small">
                   Completá tu dirección para calcular el envío disponible y continuar al pago.
-                </div>
+                </div> --}}
 
                 <form method="POST" action="{{ route('front.checkout.personal_data.store') }}" id="checkout-start-form">
                   @csrf
                   @include('front.checkout.partials.shipping-billing-fields')
-                  <button type="submit" class="btn btn-primary w-100 mt-4">Seleccionar envío</button>
+                  <button type="submit" class="btn btn-secondary rounded-pill w-100 mt-4">Seleccionar envío</button>
                 </form>
               @endif
             </div>

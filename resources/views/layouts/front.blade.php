@@ -189,16 +189,9 @@
     </div>
   </header>
 
-  @if(session('success') || session('error'))
-    <div class="container pt-3">
-      @if(session('success'))
-        <div class="alert alert-success mb-0">{{ session('success') }}</div>
-      @endif
-      @if(session('error'))
-        <div class="alert alert-danger mb-0">{{ session('error') }}</div>
-      @endif
-    </div>
-  @endif
+  @unless($__env->hasSection('inline_flash_messages'))
+    @include('front.partials.flash-messages', ['wrapperClass' => 'container pt-3'])
+  @endunless
 
   <main class="flex-grow-1">
     @yield('content')

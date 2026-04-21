@@ -62,7 +62,7 @@
 
           <button
             type="button"
-            class="btn btn-sm btn-outline-secondary favorite-toggle-button js-toggle-favorite active"
+            class="btn btn-sm btn-outline-secondary favorite-toggle-button favorites-offcanvas-remove js-toggle-favorite active"
             data-id="{{ $product->id }}"
             data-active="1"
             data-active-label="Quitar de favoritos"

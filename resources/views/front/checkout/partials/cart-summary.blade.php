@@ -1,5 +1,5 @@
 <div class="card mt-4 mt-lg-0 front-form-card">
-  <div class="card-header bg-light">
+  <div class="card-header" style="background-color: rgba(128, 128, 128, 1) !important; color: #FFF;">
     <strong>Resumen del carrito</strong>
   </div>
   <div class="card-body">
@@ -156,7 +156,7 @@
             @csrf
             <div class="input-group">
               <input type="text" name="coupon_code" class="form-control" placeholder="Ingresá el código de cupón" required>
-              <button type="submit" class="btn btn-primary">Usar</button>
+              <button type="submit" class="btn btn-secondary">Usar</button>
             </div>
             @if(session('coupon_error'))
               <small class="text-danger">{{ session('coupon_error') }}</small>

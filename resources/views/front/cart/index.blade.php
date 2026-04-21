@@ -2,6 +2,7 @@
 
 @section('title', 'Mi carrito')
 @section('body_class', 'page-hero checkout-page')
+@section('inline_flash_messages', '1')
 
 @section('content')
   @include('front.checkout.partials.page-header', [
@@ -17,6 +18,7 @@
   <section class="checkout-flow-section">
     <div class="checkout-flow-shell">
       <div class="container">
+        @include('front.partials.flash-messages', ['wrapperClass' => 'mb-4'])
 
 
       @if($items->count())

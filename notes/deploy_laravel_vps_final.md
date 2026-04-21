@@ -2,6 +2,12 @@
 
 Esta guía resume el proceso completo para desplegar un proyecto Laravel desde cero en un VPS productivo.
 
+
+
+
+ssh -p5676 root@138.219.42.49
+Clave: ilU7VO1L8pJ1
+
 ---
 
 # 🔐 0. Configuración de Nginx + SSL
@@ -66,6 +72,7 @@ git commit -m "Initial commit"
 
 - GitHub → Settings → Developer Settings → Personal Access Tokens
 - Permisos: repo
+- Guardalo en un gestor seguro. No lo pegues en el repositorio.
 
 ---
 
@@ -149,7 +156,10 @@ npm run build
 
 Desde local:
 ```
-rsync -avz --progress -e "ssh -p PUERTO" ruta/local/storage/app/public/ root@IP:/var/www/html/proyecto/storage/app/public/
+rsync -avzi --progress -e "ssh -p 5676" \
+  /Applications/XAMPP/xamppfiles/htdocs/hilandoculturas/storage/app/public/ \
+  root@138.219.42.49:/var/www/html/hilando/storage/app/public/
+
 ```
 
 ---

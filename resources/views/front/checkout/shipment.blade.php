@@ -5,9 +5,9 @@
 
 @section('content')
   @include('front.checkout.partials.page-header', [
-    'title' => 'Seleccionar método de envío',
+    // 'title' => 'Seleccionar método de envío',
     'subtitle' => 'Elegí la opción de envío disponible para este pedido.',
-    'eyebrow' => 'Checkout',
+    // 'eyebrow' => 'Checkout',
     'breadcrumbs' => [
       ['label' => 'Inicio', 'url' => route('home')],
       ['label' => 'Productos', 'url' => route('category.show', 'todas')],
@@ -22,6 +22,9 @@
           <div class="col-lg-6">
           @php
             $selectedShipmentId = (int) old('shipment_method_id', (int) session('checkout.shipment_method_id'));
+            if ($selectedShipmentId <= 0 && $shipmentMethods->count() === 1) {
+              $selectedShipmentId = (int) $shipmentMethods->first()->id;
+            }
             $openShippingData = ($selectedShipmentId > 0) || $errors->any();
             $sessionShip = (object) (session('guest_checkout.shipping') ?? []);
             $destCity = $sessionShip->city ?? (optional(optional($customer ?? null)->address)->city ?? '');
@@ -30,15 +33,22 @@
             $destLabel = trim(implode(', ', array_filter([$destCity, $destProv])));
           @endphp
 
+
+
+            <div class="card shadow-sm front-form-card">
+              <div class="card-header" style="background-color: rgba(128, 128, 128, 1) !important; color: #FFF;">
+                <strong>Método de Envío</strong>
+              </div>              
+              <div class="card-body">
+
+
             @if($destLabel || $destPc)
-              <div class="alert alert-info py-2 px-3 small">
+              <div class="alert alert-info rounded-pill py-2 px-3 small" style="color:#000; background-color:rgba(128,128,128,.1); border: #ece6e0">
                 <strong>Destino:</strong> {{ $destLabel ?: '—' }} @if($destPc) (CP {{ $destPc }}) @endif
                 — <a href="{{ route('front.checkout.index') }}" class="alert-link">Modificar</a>
               </div>
             @endif
 
-            <div class="card shadow-sm front-form-card">
-              <div class="card-body">
                 <form id="shipment-form" method="POST" action="{{ route('front.checkout.shipment.store') }}">
                   @csrf
 
@@ -120,10 +130,10 @@
 
                   <div class="row mt-4 g-2">
                     <div class="col-sm-6">
-                      <a href="{{ route('front.checkout.index') }}" class="btn btn-outline-secondary w-100">Atrás</a>
+                      <a href="{{ route('front.checkout.index') }}" class="btn btn-outline-secondary rounded-pill w-100">Atrás</a>
                     </div>
                     <div class="col-sm-6">
-                      <button type="submit" class="btn btn-primary w-100" id="btn-continue" {{ $openShippingData ? '' : 'disabled' }}>Continuar</button>
+                      <button type="submit" class="btn btn-secondary rounded-pill w-100" id="btn-continue" {{ $openShippingData ? '' : 'disabled' }}>Continuar</button>
                     </div>
                   </div>
                 </form>

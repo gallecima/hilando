@@ -56,10 +56,10 @@
                   <form method="POST" action="{{ route('cart.remove') }}">
                     @csrf
                     <input type="hidden" name="item_id" value="{{ $item->id }}">
-                    <button type="submit" class="btn btn-sm btn-outline-secondary">
-                      <i class="fa-solid fa-x"></i>
+                    <button type="submit" class="btn btn-sm btn-outline-secondary" aria-label="Quitar {{ $item->name }} del carrito" title="Quitar">
+                      <span aria-hidden="true">&times;</span>
                     </button>
-                  </form>        
+                  </form>
         </div>
 
 
@@ -109,7 +109,7 @@
     @elseif($isFreeCheckout)
       <div class="small text-success fw-semibold">Pedido sin cargo: no se solicitará pago.</div>
     @endif
-    <a href="{{ route('front.checkout.index') }}" class="btn btn-primary w-100">{{ (!$requiresShipping && $isFreeCheckout) ? 'Continuar gratis' : 'Iniciar compra' }}</a>
+    <a href="{{ route('front.checkout.index') }}" class="btn btn-secondary rounded-pill w-100">{{ (!$requiresShipping && $isFreeCheckout) ? 'Continuar gratis' : 'Iniciar compra' }}</a>
     <a href="{{ route('cart.index') }}" class="fw-light"><small>Ver detalle del carrito</small></a>
   </div>
 @endif
